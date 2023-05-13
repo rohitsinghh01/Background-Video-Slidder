@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/bfc87244b9.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="shortcut icon" href="./Images/logo.jpg" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+      <a href="#" class="brand">Travel</a>
+      <div class="menu-btn"></div>
+      <div class="nav">
+        <div class="nav-items">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Explore</a>
+          <a href="#">Gallery</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="home">
+      <video
+        src="./Videos/island.mp4"
+        class="video-slide active"
+        autoplay
+        muted
+        loop
+      ></video>
+      <video
+        src="./Videos/camping.mp4"
+        class="video-slide"
+        autoplay
+        muted
+        loop
+      ></video>
+      <video
+        src="./Videos/driving.mp4"
+        class="video-slide"
+        autoplay
+        muted
+        loop
+      ></video>
+      <video
+        src="./Videos/roadtrip.mp4"
+        class="video-slide"
+        autoplay
+        muted
+        loop
+      ></video>
+      <video
+        src="./Videos/nature.mp4"
+        class="video-slide"
+        autoplay
+        muted
+        loop
+      ></video>
+      <video
+      src="./Videos/trekking.mp4"
+      class="video-slide"
+      autoplay
+      muted
+      loop
+    ></video>
+      <div class="content active">
+        <h1>Wonderful.<br /><span>Island</span></h1>
+        <p>
+          Islands are enchanting places that offer a sense of escape and serenity. Surrounded by vast bodies of water, islands possess a unique charm that captivates our senses. Whether you're looking to relax in a tranquil paradise or explore the mysteries of the sea, there's always something special to discover on an island.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Camping.<br /><span>Enjoy</span></h1>
+        <p>
+          Camping is a wonderful way to escape the hustle and bustle of everyday life and immerse yourself in the great outdoors. It offers a chance to disconnect from technology and reconnect with nature, while enjoying the simple pleasures of life like roasting marshmallows over a campfire and stargazing at night.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Adventures.<br /><span>Off Road</span></h1>
+        <p>
+          Off-road adventures are a thrilling way to explore the untamed beauty of the great outdoors. Whether you're driving through rugged terrain, crossing streams, or climbing mountains, there's always a sense of excitement and adrenaline that comes with off-roading. It's an opportunity to push the limits of what you thought was possible and to experience new challenges that can be both exhilarating and rewarding.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Road Trip.<br /><span>Together</span></h1>
+        <p>
+          Road trips are an unforgettable way to bond with family and friends while exploring new destinations. Whether you're cruising down scenic highways or venturing off the beaten path, road trips offer a sense of freedom and adventure that is hard to replicate. From singing along to your favorite songs on the radio to trying new foods.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+
+      <div class="content">
+        <h1>Feel Nature.<br /><span>Enjoy</span></h1>
+        <p>
+          Feeling nature is a profound and rejuvenating experience that nourishes the soul. It's a chance to connect with the natural world on a deep level, to slow down and appreciate the beauty that surrounds us. Whether it's the soft breeze on our face, the scent of blooming flowers, or the gentle sound of a babbling brook, nature has a way of calming our minds and uplifting our spirits. 
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Trekking.<br /><span>Together</span></h1>
+        <p>
+          Trekking together is a unique and unforgettable experience that allows you to connect with nature and each other in a meaningful way. It's a chance to challenge yourself physically and mentally, while exploring new landscapes and cultures. Whether you're hiking through the mountains, trekking through the jungle, or crossing barren deserts, trekking together requires teamwork, communication, and mutual support.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="media-icons">
+        <a href="#"><i class="fas fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fas fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fas fa-brands fa-twitter"></i></a>
+      </div>
+
+      <div class="slider">
+        <div class="navi-btn active"></div>
+        <div class="navi-btn"></div>
+        <div class="navi-btn"></div>
+        <div class="navi-btn"></div>
+        <div class="navi-btn"></div>
+        <div class="navi-btn"></div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+      const menuBtn = document.querySelector(".menu-btn");
+      const nav = document.querySelector(".nav");
+      menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        nav.classList.toggle("active");
+      });
+
+      const btns = document.querySelectorAll(".navi-btn");
+      const slides = document.querySelectorAll(".video-slide");
+      const contents = document.querySelectorAll(".content");
+       var sliderNav = function (manual) {
+        btns.forEach((btn) => {
+          btn.classList.remove("active");
+        }); 
+
+
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+        
+        
+        contents.forEach((content) => {
+          content.classList.remove("active");
+        }); 
+
+
+
+
+
+        btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+
+      };
+
+      btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          sliderNav(i);
+        });
+      });
+    </script>
+  </body>
+</html>
